@@ -1,0 +1,82 @@
+body {
+  font-family: 'Arial', sans-serif;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  margin: 0;
+  background-color: #e0f7fa;
+}
+
+#app {
+  display: none;
+  text-align: center;
+  background-color: #f0f8ff;
+  padding: 20px;
+  border: 2px solid #00bcd4;
+  border-radius: 15px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  max-width: 600px;
+  max-height: 80vh;
+  overflow-y: auto;
+}
+
+#download-canary {
+  display: none;
+  text-align: center;
+  background-color: #f0f8ff;
+  padding: 20px;
+  border: 2px solid #00bcd4;
+  border-radius: 15px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+#download-canary a {
+  display: inline-block;
+  padding: 10px 20px;
+  background-color: #00bcd4;
+  color: white;
+  text-decoration: none;
+  border-radius: 15px;
+  transition: background-color 0.3s;
+}
+
+#download-canary a:hover {
+  background-color: #008c9e;
+}
+
+#app div {
+  margin: 20px 0;
+}
+
+#input {
+  padding: 10px;
+  width: 300px;
+  border: 2px solid #00bcd4;
+  border-radius: 15px;
+  box-shadow: 0 0 5px rgba(0, 0, 0, 0.1);
+}
+
+#submit {
+  padding: 10px 20px;
+  background-color: #00bcd4;
+  color: white;
+  border: none;
+  border-radius: 15px;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+
+#submit:hover {
+  background-color: #008c9e;
+}
+
+#answer {
+  font-size: 20px;
+  color: #00bcd4;
+  white-space: pre-wrap;
+  word-wrap: break-word;
+  max-height: 400px;
+  overflow-y: auto;
+  text-align: left;
+}
