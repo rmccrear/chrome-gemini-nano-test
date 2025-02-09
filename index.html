@@ -12,8 +12,17 @@
 
   <section id="download-canary">
     <h1>Download Canary</h1>
-    <p>To try out window.ai Chrome API, download Chrome Canary version 135 or above. Then open chrome://flags/ to enable <b>Prompt API for Gemini Nano</b></p>
-    <a href="https://www.google.com/chrome/canary/" target="_blank">Download Canary</a>
+    <p>
+      In the future, AI language models will be available to JavaScript applications through <code>window.ai</code> in
+      Chrome.
+    </p>
+    <p>
+      To try this out now, download Chrome Canary version 135 or above.
+    </p>
+    <a href="https://www.google.com/chrome/canary/?" target="_blank">Download Canary</a>
+    <p>
+      After downloading, open the URL <code>chrome://flags/</code> in Canary and enable <b>Prompt API for Gemini Nano</b>
+    </p>
   </section>
   <main id="app">
     <div>
@@ -52,7 +61,7 @@
     document.getElementById('nano-form').addEventListener('submit', getAnswer);
 
     // Check if the window.ai object is available
-    if(!window.ai || !window.ai.languageModel || !window.ai.languageModel.create) {
+    if (!window.ai || !window.ai.languageModel || !window.ai.languageModel.create) {
       document.getElementById('app').style.display = 'none';
       document.getElementById('download-canary').style.display = 'block';
     } else {
