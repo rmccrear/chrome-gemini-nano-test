@@ -77,27 +77,41 @@
   </section>
   <main id="app">
     <div>
-      <input type="text" id="input" placeholder="Enter ya' question">
-      <button id="submit">Submit</button>
+      <form id="nano-form">
+        <input type="text" id="input" placeholder="Enter ya' question">
+        <button id="submit">Submit</button>
+      </form>
     </div>
     <div>
       <p id="answer"></p>
     </div>
   </main>
   <script>
-    async function getAnswer() {
+    async function getAnswer(e) {
+      e.preventDefault();
       console.log("starting answer")
+      // set loading message
+      document.getElementById('answer').innerText = 'Loading...accessing local ai model for answer (Gemini Nano)...this will take a minute.';
+
+      // Get the input value
       const input = document.getElementById('input').value;
       console.log(input);
+
+      // Create a language model
       const model = await window.ai.languageModel.create();
-      document.getElementById('answer').innerText = 'Loading...accessing local ai model for answer (Gemini Nano)';
-      // set loading message
+
+      // Prompt the model
       const answer = await model.prompt(input);
       console.log(answer);
+
+      // Set the answer
       document.getElementById('answer').innerText = answer;
     }
 
-    document.getElementById('submit').addEventListener('click', getAnswer);
+    // Add event listener to the form
+    document.getElementById('nano-form').addEventListener('submit', getAnswer);
+
+    // Check if the window.ai object is available
     if(!window.ai || !window.ai.languageModel || !window.ai.languageModel.create) {
       document.getElementById('app').style.display = 'none';
       document.getElementById('download-canary').style.display = 'block';
