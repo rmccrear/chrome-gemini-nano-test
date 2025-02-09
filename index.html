@@ -36,6 +36,7 @@
     </div>
   </main>
   <script>
+    let model;
     async function getAnswer(e) {
       e.preventDefault();
       console.log("starting answer")
@@ -46,9 +47,11 @@
       const input = document.getElementById('input').value;
       console.log(input);
 
-      // Create a language model
-      const model = await window.ai.languageModel.create();
-
+      // Create a language model or reuse the existing one
+      if (!model) {
+        model = await window.ai.languageModel.create();
+        console.log("model created");
+      }
       // Prompt the model
       const answer = await model.prompt(input);
       console.log(answer);
